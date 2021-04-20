@@ -1,0 +1,23 @@
+body {
+    background-color: dimgray;
+}
+
+
+h1 {
+    display: flex;
+    justify-content: center;
+    font-size: 49px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#poga {
+    display:flex;
+}
+
+
+#pievinotPirkumu {
+    display: flex;
+    width: 220px;
+    height: 50px;
+    font-size: 25px;
+}
