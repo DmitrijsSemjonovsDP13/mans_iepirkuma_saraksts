@@ -21,3 +21,8 @@ h1 {
     height: 50px;
     font-size: 25px;
 }
+
+#popUp{
+    display: none;
+    
+}

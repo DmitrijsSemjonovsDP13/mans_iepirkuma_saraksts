@@ -1,3 +1,7 @@
-console.log("JavaScript is working!")
+document.getElementById('pievinotPirkumu').addEventListener('click', () => {
+    console.log("Poga nospiesta!");
 
-document.getElementById('pievinotPirkumu').addEventListener('click', )
+    let popUp = document.getElementById('popUp')
+
+    popUp.style.display = 'block'
+})
