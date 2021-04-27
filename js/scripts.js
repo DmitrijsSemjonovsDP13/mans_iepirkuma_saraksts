@@ -1,5 +1,11 @@
 const POP_UP = document.getElementById('popUp');
-let pirkums = []
+let pirkums = [] ; 
+
+window.addEventListener('load', () => {
+    pirkums = JSON.parse(localStorage.getItem("pirkums") || "[]");
+    console.log(pirkums)
+    render();
+});
 
 document.getElementById('pievinotPirkumu').addEventListener('click', () => {
    
@@ -10,28 +16,30 @@ document.getElementById('pievinotPirkumu').addEventListener('click', () => {
 document.getElementById('jaunsPirkumus').addEventListener('click' , () => {
     POP_UP.style.display = 'none';
     
-    let saraksts = {nosaukums: nosaukums.value, daudzums: daudzums.value};
+    let groza = {Nosaukums: nosaukums.value, Daudzums: daudzums.value};
 
     nosaukums.value = "";
     daudzums.value = "";
 
-    pirkums.push(saraksts);
+    pirkums.push(groza);
 
     render();
 })
 
 
 function render() {
-    let pirkumagrozs = document.getElementById('pirkumagrozs');
+    let pirkumaGrozs = document.getElementById('pirkumaGrozs');
+    pirkumaGrozs.innerHTML = "";
 
     for(let i = 0; i < pirkums.length; i++){
        let groza = `            
         <div class="groza">
-            <h3>Nosaukums : ${pirkums[i].nosaukums}</h4>
-            <h4>Daudzums: ${pirkums[i].daudzums}</h4> 
+            <h3>Nosaukums : ${pirkums[i].Nosaukums}</h4>
+            <h4>Daudzums: ${pirkums[i].Daudzums}</h4> 
         </div>`;
-    pirkumagrozs.innerHTML += groza;
+    pirkumaGrozs.innerHTML += groza;
     }
     
 
+    localStorage.setItem("pirkums", JSON.stringify(pirkums));
 }
